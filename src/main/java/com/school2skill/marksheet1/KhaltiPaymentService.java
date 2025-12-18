@@ -2,10 +2,11 @@ package com.school2skill.marksheet1;
 
 import org.springframework.stereotype.Service;
 
-@Service("khalti")
+
 public class KhaltiPaymentService implements PaymentService{
     @Override
-    public void pay(PaymentRequest request) {
-        System.out.println("Paid "+request.getAmount()+"using khalti");
+    public boolean payFee(int amount) {
+        System.out.println("Paid " + amount + " via Khalti");
+        return true;
     }
 }

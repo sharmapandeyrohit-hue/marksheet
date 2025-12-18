@@ -4,13 +4,19 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
+
 @Component
-public class PaymentLifecycleLogger {
+public class SystemLifecycle {
+
+
     @PostConstruct
-    public void init(){
-        System.out.println("Payment system initialized");
+    public void start() {
+        System.out.println("Marksheet System Started");
     }
+
+
     @PreDestroy
-    public void destroy(){
-        System.out.println("Payment system destroy");}
+    public void stop() {
+        System.out.println("Marksheet System Stopped");
+    }
 }

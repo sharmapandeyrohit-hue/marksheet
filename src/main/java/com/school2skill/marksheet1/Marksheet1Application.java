@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Marksheet1Application implements CommandLineRunner {
     @Autowired
-    PaymentProcessor processor;
+    StudentService service;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Marksheet1Application.class, args);
@@ -16,7 +16,9 @@ public class Marksheet1Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-    processor.processPayment(500);
+        Student s = new Student(1, "Rohit");
+        Marksheet m = service.viewMarksheet(s);
+        System.out.println("Result: " + m.getResult());
     }
 //    1. Spring starts application
 //2. Bean objects are created
